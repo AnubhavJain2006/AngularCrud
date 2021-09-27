@@ -1,0 +1,61 @@
+<div id="main-wrapper" class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-xl-10">
+            <div class="card border-0">
+                <div class="card-body p-0">
+                    <div class="row no-gutters">
+                        <div class="col-lg-6">
+                            <div class="p-5">
+                                <div class="mb-5">
+                                    <h3 class="h4 font-weight-bold text-theme">Register</h3>
+                                </div>
+                                <form>
+                                    <div class="form-group">
+                                        <label for="yourName">Your name</label>
+                                        <input type="text" [(ngModel)]="name" name="name" class="form-control"
+                                            id="yourName" />
+
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Email address</label>
+                                        <input type="email" class="form-control" [(ngModel)]="email" name="email"
+                                            id="exampleInputEmail1" />
+                                    </div>
+                                    <div class="form-group mb-5">
+                                        <label for="exampleInputPassword1">Password</label>
+                                        <input type="password" class="form-control" [(ngModel)]="password"
+                                            name="password" id="exampleInputPassword1" />
+                                    </div>
+                                    <button type="submit" (click)="registerData()"
+                                        class="btn btn-theme">Register</button>
+                                </form>
+                                <div class="mt-5" *ngIf="!flag">
+                                    <mat-spinner></mat-spinner>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-lg-6 d-none d-lg-inline-block">
+                            <div class="account-block rounded-right">
+                                <div class="overlay rounded-right"></div>
+                                <div class="account-testimonial">
+                                    <p class="lead text-white">"Many of life's failures are people who didnot realize
+                                        how close they were to success when they gave up.</p>
+                                    <p>Thomas Alva Edison</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- end card-body -->
+            </div>
+            <!-- end card -->
+            <p class="text-muted text-center mt-3 mb-0">Already have an account? <a href="login.html"
+                    class="text-primary ml-1">login</a></p>
+            <!-- end row -->
+        </div>
+        <!-- end col -->
+    </div>
+    <!-- Row -->
+</div>
