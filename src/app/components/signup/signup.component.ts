@@ -2,6 +2,7 @@ import { UserApiService } from './../../services/user-api.service';
 import { User } from './../../interface/user';
 import { Component, OnInit } from '@angular/core';
 import { concat } from 'rxjs';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-signup',
@@ -13,8 +14,7 @@ export class SignupComponent implements OnInit {
   name: string = "";
   email: string = "";
   password: string = "";
-  flag: any = 1;
-  constructor(private userApi: UserApiService) { }
+  constructor(private userApi: UserApiService, private toastr: ToastrService) { }
 
   ngOnInit(): void {
   }
@@ -23,12 +23,17 @@ export class SignupComponent implements OnInit {
     // console.log(this.name)
     // console.log(this.email)
     // console.log(this.password)
-    var user: User = { name: this.name, email: this.email, password: this.password };
+    var user: User = { id: 1, name: this.name, email: this.email, password: this.password };
     console.log(user);
-    this.flag = false;
-    var flag1 = this.userApi.addUser(user);
-    if (flag1)
-      this.flag = false;
+    this.userApi.addUser(user).subscribe(resp => {
+      console.log(resp)
+      this.toastr.success("Data Inserted Successfully", "Congratulations", { timeOut: 3000 })
+    }, error =>
+      console.log(error)
+    );
+    this.name = "";
+    this.email = "";
+    this.password = ""
   }
 
 

@@ -1,1 +1,28 @@
-<p>home works!</p>
+<div class="container">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr *ngFor="let user of users">
+                <td>{{user.id}}</td>
+                <td>{{user.name}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.password}}</td>
+                <td> <button class="btn btn-danger" (click)="deleteUser(user.id)">Delete</button> | <a
+                        routerLink="edit/{{user.id}}" class="btn btn-warning">Update </a> | <a
+                        routerLink="info/{{user.id}}" class="btn btn-primary">
+                        Info</a></td>
+            </tr>
+
+        </tbody>
+
+    </table>
+</div>

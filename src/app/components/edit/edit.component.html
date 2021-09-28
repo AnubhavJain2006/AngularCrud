@@ -7,7 +7,7 @@
                         <div class="col-lg-6">
                             <div class="p-5">
                                 <div class="mb-5">
-                                    <h3 class="h4 font-weight-bold text-theme">Register</h3>
+                                    <h3 class="h4 font-weight-bold text-theme">Update</h3>
                                 </div>
                                 <form>
                                     <div class="form-group">
@@ -26,8 +26,7 @@
                                         <input type="password" class="form-control" [(ngModel)]="password"
                                             name="password" id="exampleInputPassword1" />
                                     </div>
-                                    <button type="submit" (click)="registerData()"
-                                        class="btn btn-theme">Register</button>
+                                    <button type="submit" class="btn btn-theme" (click)="updateUser()">Update</button>
                                 </form>
                                 <!-- <div class="mt-5" *ngIf="!flag">
                                     <mat-spinner></mat-spinner>
@@ -51,8 +50,8 @@
                 <!-- end card-body -->
             </div>
             <!-- end card -->
-            <p class="text-muted text-center mt-3 mb-0">Already have an account? <a href="login.html"
-                    class="text-primary ml-1">login</a></p>
+            <p class="text-muted text-center mt-3 mb-0">Already have an account? <a class="text-primary ml-1">login</a>
+            </p>
             <!-- end row -->
         </div>
         <!-- end col -->
